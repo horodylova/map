@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+**EU Interactive Map**
 
-## Getting Started
+## Project Description
 
-First, run the development server:
+An interactive map of European Union countries with the ability to view and compare various statistical data. Users can select individual countries or groups of countries to analyze data on demographics, languages, economy, and other indicators.
+Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+Interactive EU map with zoom functionality
+Selection of one or multiple countries to view statistics
+Toggle between different thematic data (gender, languages, nationalities, etc.)
+Comparative analysis of selected countries' indicators
+Visualization of statistical data through charts and diagrams
+
+## Technologies
+
+Frontend: Next.js, React
+Map: React Simple Maps with d3-zoom integration
+Data Visualization: Recharts
+Styling: styled components
+Data: Local JSON files
+
+Getting Started
+
+
+# Install dependencies
+
+```
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# Run the development server
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Project Structure
 
-## Learn More
+```
+/src
+  /components
+    /Map          # Map components
+    /Statistics   # Statistics display components
+    /UI           # User interface components
+  /data           # JSON data files
+  /pages          # Next.js pages
+  /styles         # Styles
+  /utils          # Helper functions
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Development Roadmap
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Basic implementation of interactive map
+Adding country selection functionality
+Integration of statistical data
+Implementation of comparative analytics
+UI/UX improvements
+Performance optimization
