@@ -4,6 +4,8 @@
 import euData from "../../../data/euData.json"
 import styles from "./EuMapContainer.module.css"
 
+import EuInteractiveMap from '@/components/Map/Map'
+
 export default function EuMapContainer() {
   const meta = euData.metadata;
 
@@ -14,7 +16,7 @@ export default function EuMapContainer() {
         Last updated: {meta.lastUpdated}
       </div>
       <div>
-        {/* EU map component*/}
+        <EuInteractiveMap/>
       </div>
     </div>
   );
