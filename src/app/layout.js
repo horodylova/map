@@ -1,9 +1,16 @@
+import './globals.css'
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>
-        {children}
-      </body>
-    </html>
-  );
+    <head>
+    <link rel="icon" href="/map.svg" type="image/svg+xml" />
+    </head>
+    <body>
+        <main>
+          {children}
+        </main>
+    </body>
+  </html>
+)
 }

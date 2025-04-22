@@ -1,11 +1,12 @@
 
+import EuMapContainer from "@/components/EuMapContainer/EuMapContainer"
+
+
 export default function Home() {
   return (
     <div>
       <main>
-       <p>
-        Hello
-       </p>
+       <EuMapContainer/>
       </main>
       <footer>
       </footer>
