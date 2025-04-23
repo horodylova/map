@@ -3,7 +3,7 @@
 import { ComposableMap, Geographies, Geography } from "react-simple-maps";
 import geoData from "../../../data/world-110m.json";
 import euData from "../../../data/euData.json";
-import styles from "./Map.module.css"; 
+import styles from "./Map.module.css";
 
 const euCountryNames = euData.countries.map((country) => country.name);
 
