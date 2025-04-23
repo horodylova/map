@@ -4,6 +4,7 @@ import { ComposableMap, Geographies, Geography } from "react-simple-maps";
 import geoData from "../../../data/world-110m.json";
 import euData from "../../../data/euData.json";
 import styles from "./Map.module.css";
+import { Tooltip as ReactTooltip } from "react-tooltip";
 
 const euCountryNames = euData.countries.map((country) => country.name);
 
@@ -23,12 +24,15 @@ export default function EuInteractiveMap() {
                 <Geography
                   key={geo.rsmKey}
                   geography={geo}
+                  data-tooltip-id={isEU ? "eu-tooltip" : undefined}
+                  data-tooltip-content={isEU ? countryName : undefined}
                   style={{
                     default: {
                       fill: isEU ? "var(--color-primary)" : "var(--color-border)",
                       stroke: "var(--color-text)",
                       strokeWidth: 0.5,
                       outline: "none",
+                      cursor: isEU ? "pointer" : "default",
                     },
                     hover: {
                       fill: isEU ? "var(--color-secondary)" : "var(--color-text-light)",
@@ -45,6 +49,20 @@ export default function EuInteractiveMap() {
           }
         </Geographies>
       </ComposableMap>
+      <ReactTooltip
+        id="eu-tooltip"
+        place="top"
+        className={styles.euTooltip}
+        style={{
+          backgroundColor: "var(--color-primary)",
+          color: "var(--color-bg)",
+          borderRadius: "6px",
+          fontFamily: "var(--font-sans)",
+          fontSize: "1rem",
+          boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
+          padding: "0.5em 1em"
+        }}
+      />
     </div>
   );
 }

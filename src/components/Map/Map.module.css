@@ -16,3 +16,12 @@
     overflow-x: hidden;
   }
 }
+
+
+.euTooltip {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  border-radius: 6px;
+  padding: 0.5em 1em;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
