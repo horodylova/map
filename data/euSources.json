@@ -1,0 +1,24 @@
+{
+    "sources": [
+      {
+        "title": "Eurostat – EU Population Diversity by Citizenship and Country of Birth",
+        "url": "https://ec.europa.eu/eurostat/statistics-explained",
+        "description": "Data extracted in February 2025, covering migration, foreign-born population, and citizenship."
+      },
+      {
+        "title": "Eurostat – Demography of Europe: 2024 Edition",
+        "url": "https://ec.europa.eu/eurostat",
+        "description": "Official demographic data for all EU member states, including population structure and diversity."
+      },
+      {
+        "title": "The Sofia Globe – Eurostat: Close to One in 10 Living in EU Born Outside It",
+        "url": "https://sofiaglobe.com",
+        "description": "Summary and commentary on Eurostat’s latest figures, published in February 2025."
+      },
+      {
+        "title": "Statista – Share of Foreign Nationals in EU Member States (2022–2024)",
+        "url": "https://statista.com",
+        "description": "Comparative statistics and visuals showing the proportion of foreign nationals in EU countries."
+      }
+    ]
+  }
