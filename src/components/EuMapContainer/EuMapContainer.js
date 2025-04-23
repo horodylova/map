@@ -4,6 +4,7 @@
 import euData from "../../../data/euData.json"
 import styles from "./EuMapContainer.module.css"
 
+import CategoryRadioGroup from "@/components/CategoryRadioGroup/CategoryRadioGroup";
 import EuInteractiveMap from '@/components/Map/Map'
 import Sources from '@/components/Sources/Sources'
 
@@ -16,6 +17,7 @@ export default function EuMapContainer() {
       <div className={styles.euMapUpdated}>
         Last updated: {meta.lastUpdated}
       </div>
+      <CategoryRadioGroup onChange={(category) => console.log(category)} />
       <div>
         <EuInteractiveMap/>
       </div>
