@@ -28,7 +28,6 @@ export default function EuInteractiveMap({
                 const countryName = geo.properties.NAME || geo.properties.name;
                 const isEU = euCountryNames.includes(countryName);
 
-                // Highlight logic
                 const isSelected = isMulti
                   ? selectedCountries.includes(countryName)
                   : selectedCountry === countryName;

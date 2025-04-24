@@ -8,7 +8,6 @@ import styles from "./EuMapContainer.module.css";
 import CategoryRadioGroup from "@/components/CategoryRadioGroup/CategoryRadioGroup";
 import MultiSelectToggle from "@/components/MultiSelectToggle/MultiSelectToggle";
 import EuInteractiveMap from '@/components/Map/Map';
-import Sources from '@/components/Sources/Sources';
 import Modal from "../Modal/Modal";
 import { getSummedGenderRatio } from "@/utils/genderUtils";
 
@@ -89,11 +88,17 @@ export default function EuMapContainer() {
         onReset={handleReset}
       />
       {isMulti && !isModalOpen && (
-        <div className="modalWindow" style={{ margin: "1rem 0" }}>
+        <div className="modalWindow" style={{ margin: "1rem 0", textAlign: "center" }}>
           <div>
-            {selectedCountries.length > 0
-              ? `You have selected: ${selectedCountries.join(", ")}`
-              : "No countries selected"}
+            {selectedCountries.length > 0 ? (
+              <span className={styles.selectedCountriesInfo}>
+                You have selected: {selectedCountries.join(", ")}
+              </span>
+            ) : (
+              <span className={styles.noCountriesInfo}>
+                No countries selected
+              </span>
+            )}
           </div>
           <button
             style={{
@@ -148,7 +153,6 @@ export default function EuMapContainer() {
           </div>
         ) : null}
       </Modal>
-      <Sources />
     </div>
   );
 }

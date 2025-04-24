@@ -5,7 +5,7 @@ import styles from "./Sources.module.css";
 
 export default function Sources() {
   return (
-    <div className={styles.sourcesContainer}>
+    <div className={`${styles.sourcesContainer} footerContent`}>
       <h2 className={styles.sourcesTitle}>Sources</h2>
       <ul className={styles.sourceList}>
         {sourcesData.sources.map((src, idx) => (

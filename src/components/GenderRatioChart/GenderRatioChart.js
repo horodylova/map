@@ -32,7 +32,6 @@ export default function GenderRatioChart({ genderRatio }) {
             ))}
           </Pie>
           <Tooltip formatter={(value) => `${value}%`} />
-          {/* <Legend verticalAlign="bottom" height={36} /> */} {/* Remove this line */}
         </PieChart>
       </ResponsiveContainer>
       <div className={styles.genderNumbers}>

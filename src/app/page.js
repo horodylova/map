@@ -1,5 +1,6 @@
 
 import EuMapContainer from "@/components/EuMapContainer/EuMapContainer"
+import Sources from '@/components/Sources/Sources';
 
 
 export default function Home() {
@@ -9,6 +10,9 @@ export default function Home() {
        <EuMapContainer/>
       </main>
       <footer>
+        <div className="footerContent">
+          <Sources />
+        </div>
       </footer>
     </div>
   );
