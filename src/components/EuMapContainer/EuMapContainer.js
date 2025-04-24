@@ -63,6 +63,9 @@ export default function EuMapContainer() {
 
   const handleCloseModal = () => {
     setIsModalOpen(false);
+    setSelectedCountries([]);
+    setSelectedCountry(null);
+    setIsMulti(false); 
   };
 
   return (
