@@ -1,6 +1,7 @@
 "use client"
 
 import React, { useState } from "react";
+import GenderRatioChart from "@/components/GenderRatioChart/GenderRatioChart";
 import euData from "../../../data/euData.json";
 import styles from "./EuMapContainer.module.css";
 
@@ -9,9 +10,11 @@ import MultiSelectToggle from "@/components/MultiSelectToggle/MultiSelectToggle"
 import EuInteractiveMap from '@/components/Map/Map';
 import Sources from '@/components/Sources/Sources';
 import Modal from "../Modal/Modal";
+import { getSummedGenderRatio } from "@/utils/genderUtils";
 
 export default function EuMapContainer() {
   const meta = euData.metadata;
+  const countriesData = euData.countries;
 
   const [isMulti, setIsMulti] = useState(false);
   const [selectedCountry, setSelectedCountry] = useState(null);
@@ -68,6 +71,11 @@ export default function EuMapContainer() {
     setIsMulti(false); 
   };
 
+  const getCountryGenderRatio = (countryName) => {
+    const country = countriesData.find(c => c.name === countryName);
+    return country ? country.genderRatio : null;
+  };
+
   return (
     <div className={styles.euMapContainer}>
       <h2 className={styles.euMapTitle}>{meta.description}</h2>
@@ -122,17 +130,21 @@ export default function EuMapContainer() {
         onClose={handleCloseModal}
       >
         {isMulti && selectedCountries.length > 0 ? (
-          <div>
-            <h2>Selected countries: {selectedCountries.length}</h2>
-            <ul>
+          <div className={styles.modalSummaryBlock}>
+            <h2 className={styles.selectedCountriesTitle}>
+              Selected countries: {selectedCountries.length}
+            </h2>
+            <ul className={styles.selectedCountriesList}>
               {selectedCountries.map((country) => (
-                <li key={country}>{country}</li>
+                <li className={styles.selectedCountryItem} key={country}>{country}</li>
               ))}
             </ul>
+            <GenderRatioChart genderRatio={getSummedGenderRatio(selectedCountries, getCountryGenderRatio)} />
           </div>
         ) : (!isMulti && selectedCountry) ? (
           <div>
-            <h2>{selectedCountry}</h2>
+            <h2 className={styles.selectedCountryTitle}>{selectedCountry}</h2>
+            <GenderRatioChart genderRatio={getCountryGenderRatio(selectedCountry)} />
           </div>
         ) : null}
       </Modal>

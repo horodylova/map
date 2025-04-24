@@ -100,8 +100,8 @@ a:hover {
   backdrop-filter: blur(2px);
   z-index: 1000;
   display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
+  justify-content: center;  
+  align-items: center;     
 }
 
 .modalWindow {

@@ -1,69 +1,77 @@
 .toggleContainer {
-    display: flex;
-    gap: 1.2rem;
-    margin: 1.5rem 0 1rem 0;
+  display: flex;
+  gap: 1rem;
+  margin: 1.5rem 0 1rem 0;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.toggleButton {
+  background: var(--color-primary);
+  color: var(--color-bg);
+  border: none;
+  border-radius: 6px;
+  padding: 0.6em 1.2em;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s;
+  min-width: 110px;
+  white-space: normal;
+  word-break: break-word;
+  text-align: center;
+}
+
+.toggleButton.active {
+  background: var(--color-secondary);
+  color: var(--color-bg);
+}
+
+.toggleButton:hover:not(.active) {
+  background: var(--color-primary-dark, #2a4d8f);
+  color: var(--color-bg);
+}
+
+.toggleButton.active:hover {
+  background: var(--color-tertiary, #f7b32b);
+  color: var(--color-bg);
+}
+
+.resetButton {
+  background: none;
+  color: var(--color-secondary);
+  border: 1px solid var(--color-secondary);
+  border-radius: 6px;
+  padding: 0.6em 1.2em;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s, border 0.18s;
+  min-width: 90px;
+  text-align: center;
+}
+
+.resetButton:hover {
+  background: var(--color-secondary);
+  color: var(--color-bg);
+  border-color: var(--color-secondary);
+}
+
+@media (max-width: 600px) {
+  .toggleContainer {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: stretch;
   }
-  
-  .toggleButton {
-    background: var(--color-primary);
-    color: var(--color-bg);
-    border: none;
-    border-radius: 6px;
-    padding: 0.6em 1.4em;
-    font-family: var(--font-sans);
-    font-size: 1rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: background 0.18s, color 0.18s;
-  }
-  
-  /* Active state: persistent color */
-  .toggleButton.active {
-    background: var(--color-secondary);
-    color: var(--color-bg);
-  }
-  
-  /* Hover state for non-active */
-  .toggleButton:hover:not(.active) {
-    background: var(--color-primary-dark, #2a4d8f); /* fallback if --color-primary-dark not set */
-    color: var(--color-bg);
-  }
-  
-  /* Optional: hover for active state (slightly different shade) */
-  .toggleButton.active:hover {
-    background: var(--color-tertiary, #f7b32b); /* fallback if --color-tertiary not set */
-    color: var(--color-bg);
-  }
-  
+  .toggleButton,
   .resetButton {
-    background: none;
-    color: var(--color-secondary);
-    border: 1px solid var(--color-secondary);
-    border-radius: 6px;
-    padding: 0.6em 1.4em;
-    font-family: var(--font-sans);
-    font-size: 1rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: background 0.18s, color 0.18s, border 0.18s;
+    width: 100%;
+    font-size: 0.95rem;
+    padding: 0.7em 0.5em;
+    min-width: 0;
+    white-space: normal;
+    word-break: break-word;
   }
-  
-  .resetButton:hover {
-    background: var(--color-secondary);
-    color: var(--color-bg);
-    border-color: var(--color-secondary);
-  }
-  
-  @media (max-width: 600px) {
-    .toggleContainer {
-      flex-direction: column;
-      gap: 0.7rem;
-      align-items: stretch;
-    }
-    .toggleButton,
-    .resetButton {
-      width: 100%;
-      font-size: 0.98rem;
-      padding: 0.7em 0;
-    }
-  }
+}
