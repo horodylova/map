@@ -179,7 +179,14 @@ export default function EuMapContainer() {
             ) : selectedCategory === "Languages" ? (
               <LanguagesChart languages={getCountryLanguages(selectedCountry)} />
             ) : selectedCategory === "Foreign Population" ? (
-              <ForeignPopulationChart foreignPopulation={getCountryForeignPopulation(selectedCountry)} />
+              <ForeignPopulationChart
+                foreignPopulation={
+                  Object.entries(getCountryForeignPopulation(selectedCountry)).map(([name, percentage]) => ({
+                    name,
+                    percentage
+                  }))
+                }
+              />
             ) : null}
           </div>
         ) : null}
