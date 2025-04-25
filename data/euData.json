@@ -1,546 +1,789 @@
 {
-    "metadata": {
-      "description": "EU Member States Statistical Data (2025)",
-      "categories": [
-        "Gender Ratio",
-        "Languages",
-        "Foreign Population"
+  "metadata": {
+    "description": "EU Member States Statistical Data (2025)",
+    "categories": [
+      "Gender Ratio",
+      "Languages",
+      "Foreign Population"
+    ],
+    "lastUpdated": "2025-04-22"
+  },
+  "countries": [
+    {
+      "id": "Austria",
+      "name": "Austria",
+      "genderRatio": {
+        "women": 50.8,
+        "men": 49.2
+      },
+      "languages": [
+        {
+          "name": "German",
+          "percentage": 88.6
+        },
+        {
+          "name": "English",
+          "percentage": 73.0
+        },
+        {
+          "name": "French",
+          "percentage": 11.2
+        }
       ],
-      "lastUpdated": "2025-04-22"
+      "foreignPopulation": {
+        "German": 2.1,
+        "Turkish": 1.7,
+        "Serbian": 1.4,
+        "Romanian": 1.1,
+        "Others": 6.8
+      }
     },
-    "countries": [
-      {
-        "id": "Austria",
-        "name": "Austria",
-        "genderRatio": {
-          "women": 50.8,
-          "men": 49.2
-        },
-        "languages": [
-          "German",
-          "English",
-          "French"
-        ],
-        "foreignPopulation": {
-          "German": 2.1,
-          "Turkish": 1.7,
-          "Serbian": 1.4,
-          "Romanian": 1.1,
-          "Others": 6.8
-        }
+    {
+      "id": "Belgium",
+      "name": "Belgium",
+      "genderRatio": {
+        "women": 50.9,
+        "men": 49.1
       },
-      {
-        "id": "Belgium",
-        "name": "Belgium",
-        "genderRatio": {
-          "women": 50.9,
-          "men": 49.1
+      "languages": [
+        {
+          "name": "French",
+          "percentage": 55.0
         },
-        "languages": [
-          "French",
-          "Dutch",
-          "English"
-        ],
-        "foreignPopulation": {
-          "Moroccan": 2.4,
-          "French": 1.7,
-          "Italian": 1.6,
-          "Dutch": 1.2,
-          "Others": 6.0
+        {
+          "name": "Dutch",
+          "percentage": 59.0
+        },
+        {
+          "name": "English",
+          "percentage": 61.0
         }
+      ],
+      "foreignPopulation": {
+        "Moroccan": 2.4,
+        "French": 1.7,
+        "Italian": 1.6,
+        "Dutch": 1.2,
+        "Others": 6.0
+      }
+    },
+    {
+      "id": "Bulgaria",
+      "name": "Bulgaria",
+      "genderRatio": {
+        "women": 51.6,
+        "men": 48.4
       },
-      {
-        "id": "Bulgaria",
-        "name": "Bulgaria",
-        "genderRatio": {
-          "women": 51.6,
-          "men": 48.4
+      "languages": [
+        {
+          "name": "Bulgarian",
+          "percentage": 99.8
         },
-        "languages": [
-          "Bulgarian",
-          "English",
-          "Russian"
-        ],
-        "foreignPopulation": {
-          "Turkish": 0.4,
-          "Russian": 0.3,
-          "Ukrainian": 0.2,
-          "Romanian": 0.1,
-          "Others": 0.4
+        {
+          "name": "English",
+          "percentage": 32.0
+        },
+        {
+          "name": "Russian",
+          "percentage": 23.0
         }
+      ],
+      "foreignPopulation": {
+        "Turkish": 0.4,
+        "Russian": 0.3,
+        "Ukrainian": 0.2,
+        "Romanian": 0.1,
+        "Others": 0.4
+      }
+    },
+    {
+      "id": "Croatia",
+      "name": "Croatia",
+      "genderRatio": {
+        "women": 51.5,
+        "men": 48.5
       },
-      {
-        "id": "Croatia",
-        "name": "Croatia",
-        "genderRatio": {
-          "women": 51.5,
-          "men": 48.5
+      "languages": [
+        {
+          "name": "Croatian",
+          "percentage": 99.5
         },
-        "languages": [
-          "Croatian",
-          "English",
-          "Serbian"
-        ],
-        "foreignPopulation": {
-          "Bosnian": 0.8,
-          "Serbian": 0.6,
-          "Slovenian": 0.2,
-          "German": 0.1,
-          "Others": 0.3
+        {
+          "name": "English",
+          "percentage": 51.0
+        },
+        {
+          "name": "Serbian",
+          "percentage": 19.0
         }
+      ],
+      "foreignPopulation": {
+        "Bosnian": 0.8,
+        "Serbian": 0.6,
+        "Slovenian": 0.2,
+        "German": 0.1,
+        "Others": 0.3
+      }
+    },
+    {
+      "id": "Cyprus",
+      "name": "Cyprus",
+      "genderRatio": {
+        "women": 50.5,
+        "men": 49.5
       },
-      {
-        "id": "Cyprus",
-        "name": "Cyprus",
-        "genderRatio": {
-          "women": 50.5,
-          "men": 49.5
+      "languages": [
+        {
+          "name": "Greek",
+          "percentage": 80.9
         },
-        "languages": [
-          "Greek",
-          "English",
-          "French"
-        ],
-        "foreignPopulation": {
-          "Greek": 3.3,
-          "British": 2.8,
-          "Romanian": 2.3,
-          "Bulgarian": 2.0,
-          "Others": 4.2
+        {
+          "name": "English",
+          "percentage": 73.5
+        },
+        {
+          "name": "French",
+          "percentage": 12.0
         }
+      ],
+      "foreignPopulation": {
+        "Greek": 3.3,
+        "British": 2.8,
+        "Romanian": 2.3,
+        "Bulgarian": 2.0,
+        "Others": 4.2
+      }
+    },
+    {
+      "id": "Czech Republic",
+      "name": "Czech Republic",
+      "genderRatio": {
+        "women": 50.7,
+        "men": 49.3
       },
-      {
-        "id": "Czech Republic",
-        "name": "Czech Republic",
-        "genderRatio": {
-          "women": 50.7,
-          "men": 49.3
+      "languages": [
+        {
+          "name": "Czech",
+          "percentage": 98.9
         },
-        "languages": [
-          "Czech",
-          "English",
-          "Slovak"
-        ],
-        "foreignPopulation": {
-          "Ukrainian": 1.8,
-          "Slovak": 1.6,
-          "Vietnamese": 1.3,
-          "Russian": 0.6,
-          "Others": 2.2
+        {
+          "name": "English",
+          "percentage": 39.0
+        },
+        {
+          "name": "Slovak",
+          "percentage": 22.0
         }
+      ],
+      "foreignPopulation": {
+        "Ukrainian": 1.8,
+        "Slovak": 1.6,
+        "Vietnamese": 1.3,
+        "Russian": 0.6,
+        "Others": 2.2
+      }
+    },
+    {
+      "id": "Denmark",
+      "name": "Denmark",
+      "genderRatio": {
+        "women": 50.3,
+        "men": 49.7
       },
-      {
-        "id": "Denmark",
-        "name": "Denmark",
-        "genderRatio": {
-          "women": 50.3,
-          "men": 49.7
+      "languages": [
+        {
+          "name": "Danish",
+          "percentage": 96.0
         },
-        "languages": [
-          "Danish",
-          "English",
-          "German"
-        ],
-        "foreignPopulation": {
-          "Turkish": 1.1,
-          "Polish": 1.0,
-          "Syrian": 0.9,
-          "German": 0.7,
-          "Others": 4.7
+        {
+          "name": "English",
+          "percentage": 86.0
+        },
+        {
+          "name": "German",
+          "percentage": 28.0
         }
+      ],
+      "foreignPopulation": {
+        "Turkish": 1.1,
+        "Polish": 1.0,
+        "Syrian": 0.9,
+        "German": 0.7,
+        "Others": 4.7
+      }
+    },
+    {
+      "id": "Estonia",
+      "name": "Estonia",
+      "genderRatio": {
+        "women": 53.0,
+        "men": 47.0
       },
-      {
-        "id": "Estonia",
-        "name": "Estonia",
-        "genderRatio": {
-          "women": 53.0,
-          "men": 47.0
+      "languages": [
+        {
+          "name": "Estonian",
+          "percentage": 68.0
         },
-        "languages": [
-          "Estonian",
-          "Russian",
-          "English"
-        ],
-        "foreignPopulation": {
-          "Russian": 16.0,
-          "Ukrainian": 2.3,
-          "Belarusian": 1.1,
-          "Latvian": 0.6,
-          "Others": 0.9
+        {
+          "name": "Russian",
+          "percentage": 30.0
+        },
+        {
+          "name": "English",
+          "percentage": 54.0
         }
+      ],
+      "foreignPopulation": {
+        "Russian": 16.0,
+        "Ukrainian": 2.3,
+        "Belarusian": 1.1,
+        "Latvian": 0.6,
+        "Others": 0.9
+      }
+    },
+    {
+      "id": "Finland",
+      "name": "Finland",
+      "genderRatio": {
+        "women": 50.5,
+        "men": 49.5
       },
-      {
-        "id": "Finland",
-        "name": "Finland",
-        "genderRatio": {
-          "women": 50.5,
-          "men": 49.5
+      "languages": [
+        {
+          "name": "Finnish",
+          "percentage": 87.6
         },
-        "languages": [
-          "Finnish",
-          "English",
-          "Swedish"
-        ],
-        "foreignPopulation": {
-          "Russian": 1.4,
-          "Estonian": 1.2,
-          "Iraqi": 0.6,
-          "Somali": 0.4,
-          "Others": 1.0
+        {
+          "name": "English",
+          "percentage": 70.0
+        },
+        {
+          "name": "Swedish",
+          "percentage": 5.3
         }
+      ],
+      "foreignPopulation": {
+        "Russian": 1.4,
+        "Estonian": 1.2,
+        "Iraqi": 0.6,
+        "Somali": 0.4,
+        "Others": 1.0
+      }
+    },
+    {
+      "id": "France",
+      "name": "France",
+      "genderRatio": {
+        "women": 51.6,
+        "men": 48.4
       },
-      {
-        "id": "France",
-        "name": "France",
-        "genderRatio": {
-          "women": 51.6,
-          "men": 48.4
+      "languages": [
+        {
+          "name": "French",
+          "percentage": 97.8
         },
-        "languages": [
-          "French",
-          "English",
-          "Spanish"
-        ],
-        "foreignPopulation": {
-          "Algerian": 1.7,
-          "Moroccan": 1.6,
-          "Portuguese": 1.3,
-          "Italian": 1.2,
-          "Others": 6.8
+        {
+          "name": "English",
+          "percentage": 39.0
+        },
+        {
+          "name": "Spanish",
+          "percentage": 13.0
         }
+      ],
+      "foreignPopulation": {
+        "Algerian": 1.7,
+        "Moroccan": 1.6,
+        "Portuguese": 1.3,
+        "Italian": 1.2,
+        "Others": 6.8
+      }
+    },
+    {
+      "id": "Germany",
+      "name": "Germany",
+      "genderRatio": {
+        "women": 50.7,
+        "men": 49.3
       },
-      {
-        "id": "Germany",
-        "name": "Germany",
-        "genderRatio": {
-          "women": 50.7,
-          "men": 49.3
+      "languages": [
+        {
+          "name": "German",
+          "percentage": 95.0
         },
-        "languages": [
-          "German",
-          "English",
-          "French"
-        ],
-        "foreignPopulation": {
-          "Turkish": 2.8,
-          "Polish": 1.7,
-          "Syrian": 1.5,
-          "Romanian": 1.4,
-          "Others": 7.0
+        {
+          "name": "English",
+          "percentage": 56.0
+        },
+        {
+          "name": "French",
+          "percentage": 14.0
         }
+      ],
+      "foreignPopulation": {
+        "Turkish": 2.8,
+        "Polish": 1.7,
+        "Syrian": 1.5,
+        "Romanian": 1.4,
+        "Others": 7.0
+      }
+    },
+    {
+      "id": "Greece",
+      "name": "Greece",
+      "genderRatio": {
+        "women": 51.3,
+        "men": 48.7
       },
-      {
-        "id": "Greece",
-        "name": "Greece",
-        "genderRatio": {
-          "women": 51.3,
-          "men": 48.7
+      "languages": [
+        {
+          "name": "Greek",
+          "percentage": 99.0
         },
-        "languages": [
-          "Greek",
-          "English",
-          "German"
-        ],
-        "foreignPopulation": {
-          "Albanian": 3.6,
-          "Bulgarian": 1.1,
-          "Romanian": 1.0,
-          "Pakistani": 0.6,
-          "Others": 2.1
+        {
+          "name": "English",
+          "percentage": 51.0
+        },
+        {
+          "name": "German",
+          "percentage": 9.0
         }
+      ],
+      "foreignPopulation": {
+        "Albanian": 3.6,
+        "Bulgarian": 1.1,
+        "Romanian": 1.0,
+        "Pakistani": 0.6,
+        "Others": 2.1
+      }
+    },
+    {
+      "id": "Hungary",
+      "name": "Hungary",
+      "genderRatio": {
+        "women": 51.2,
+        "men": 48.8
       },
-      {
-        "id": "Hungary",
-        "name": "Hungary",
-        "genderRatio": {
-          "women": 51.2,
-          "men": 48.8
+      "languages": [
+        {
+          "name": "Hungarian",
+          "percentage": 99.6
         },
-        "languages": [
-          "Hungarian",
-          "English",
-          "German"
-        ],
-        "foreignPopulation": {
-          "Romanian": 0.7,
-          "German": 0.5,
-          "Slovak": 0.3,
-          "Ukrainian": 0.3,
-          "Others": 0.4
+        {
+          "name": "English",
+          "percentage": 37.0
+        },
+        {
+          "name": "German",
+          "percentage": 18.0
         }
+      ],
+      "foreignPopulation": {
+        "Romanian": 0.7,
+        "German": 0.5,
+        "Slovak": 0.3,
+        "Ukrainian": 0.3,
+        "Others": 0.4
+      }
+    },
+    {
+      "id": "Ireland",
+      "name": "Ireland",
+      "genderRatio": {
+        "women": 50.0,
+        "men": 50.0
       },
-      {
-        "id": "Ireland",
-        "name": "Ireland",
-        "genderRatio": {
-          "women": 50.0,
-          "men": 50.0
+      "languages": [
+        {
+          "name": "English",
+          "percentage": 98.0
         },
-        "languages": [
-          "English",
-          "Irish",
-          "French"
-        ],
-        "foreignPopulation": {
-          "Polish": 2.0,
-          "British": 1.8,
-          "Romanian": 1.2,
-          "Lithuanian": 1.1,
-          "Others": 4.5
+        {
+          "name": "Irish",
+          "percentage": 39.8
+        },
+        {
+          "name": "French",
+          "percentage": 13.0
         }
+      ],
+      "foreignPopulation": {
+        "Polish": 2.0,
+        "British": 1.8,
+        "Romanian": 1.2,
+        "Lithuanian": 1.1,
+        "Others": 4.5
+      }
+    },
+    {
+      "id": "Italy",
+      "name": "Italy",
+      "genderRatio": {
+        "women": 51.5,
+        "men": 48.5
       },
-      {
-        "id": "Italy",
-        "name": "Italy",
-        "genderRatio": {
-          "women": 51.5,
-          "men": 48.5
+      "languages": [
+        {
+          "name": "Italian",
+          "percentage": 98.0
         },
-        "languages": [
-          "Italian",
-          "English",
-          "French"
-        ],
-        "foreignPopulation": {
-          "Romanian": 2.6,
-          "Albanian": 1.1,
-          "Moroccan": 1.0,
-          "Chinese": 0.8,
-          "Others": 4.8
+        {
+          "name": "English",
+          "percentage": 34.0
+        },
+        {
+          "name": "French",
+          "percentage": 16.0
         }
+      ],
+      "foreignPopulation": {
+        "Romanian": 2.6,
+        "Albanian": 1.1,
+        "Moroccan": 1.0,
+        "Chinese": 0.8,
+        "Others": 4.8
+      }
+    },
+    {
+      "id": "Latvia",
+      "name": "Latvia",
+      "genderRatio": {
+        "women": 54.0,
+        "men": 46.0
       },
-      {
-        "id": "Latvia",
-        "name": "Latvia",
-        "genderRatio": {
-          "women": 54.0,
-          "men": 46.0
+      "languages": [
+        {
+          "name": "Latvian",
+          "percentage": 56.3
         },
-        "languages": [
-          "Latvian",
-          "Russian",
-          "English"
-        ],
-        "foreignPopulation": {
-          "Russian": 9.3,
-          "Belarusian": 2.5,
-          "Ukrainian": 2.1,
-          "Lithuanian": 0.5,
-          "Others": 0.4
+        {
+          "name": "Russian",
+          "percentage": 33.8
+        },
+        {
+          "name": "English",
+          "percentage": 46.0
         }
+      ],
+      "foreignPopulation": {
+        "Russian": 9.3,
+        "Belarusian": 2.5,
+        "Ukrainian": 2.1,
+        "Lithuanian": 0.5,
+        "Others": 0.4
+      }
+    },
+    {
+      "id": "Lithuania",
+      "name": "Lithuania",
+      "genderRatio": {
+        "women": 53.5,
+        "men": 46.5
       },
-      {
-        "id": "Lithuania",
-        "name": "Lithuania",
-        "genderRatio": {
-          "women": 53.5,
-          "men": 46.5
+      "languages": [
+        {
+          "name": "Lithuanian",
+          "percentage": 85.0
         },
-        "languages": [
-          "Lithuanian",
-          "Russian",
-          "English"
-        ],
-        "foreignPopulation": {
-          "Russian": 1.0,
-          "Belarusian": 0.9,
-          "Ukrainian": 0.7,
-          "Polish": 0.4,
-          "Others": 0.3
+        {
+          "name": "Russian",
+          "percentage": 45.0
+        },
+        {
+          "name": "English",
+          "percentage": 32.0
         }
+      ],
+      "foreignPopulation": {
+        "Russian": 1.0,
+        "Belarusian": 0.9,
+        "Ukrainian": 0.7,
+        "Polish": 0.4,
+        "Others": 0.3
+      }
+    },
+    {
+      "id": "Luxembourg",
+      "name": "Luxembourg",
+      "genderRatio": {
+        "women": 50.4,
+        "men": 49.6
       },
-      {
-        "id": "Luxembourg",
-        "name": "Luxembourg",
-        "genderRatio": {
-          "women": 50.4,
-          "men": 49.6
+      "languages": [
+        {
+          "name": "French",
+          "percentage": 95.0
         },
-        "languages": [
-          "French",
-          "English",
-          "Luxembourgish"
-        ],
-        "foreignPopulation": {
-          "Portuguese": 14.9,
-          "French": 6.6,
-          "Italian": 3.5,
-          "Belgian": 3.1,
-          "Others": 8.5
+        {
+          "name": "English",
+          "percentage": 56.0
+        },
+        {
+          "name": "Luxembourgish",
+          "percentage": 77.0
         }
+      ],
+      "foreignPopulation": {
+        "Portuguese": 14.9,
+        "French": 6.6,
+        "Italian": 3.5,
+        "Belgian": 3.1,
+        "Others": 8.5
+      }
+    },
+    {
+      "id": "Malta",
+      "name": "Malta",
+      "genderRatio": {
+        "women": 50.2,
+        "men": 49.8
       },
-      {
-        "id": "Malta",
-        "name": "Malta",
-        "genderRatio": {
-          "women": 50.2,
-          "men": 49.8
+      "languages": [
+        {
+          "name": "Maltese",
+          "percentage": 97.8
         },
-        "languages": [
-          "Maltese",
-          "English",
-          "Italian"
-        ],
-        "foreignPopulation": {
-          "British": 3.1,
-          "Italian": 2.3,
-          "Filipino": 1.7,
-          "Indian": 1.6,
-          "Others": 6.4
+        {
+          "name": "English",
+          "percentage": 86.0
+        },
+        {
+          "name": "Italian",
+          "percentage": 36.0
         }
+      ],
+      "foreignPopulation": {
+        "British": 3.1,
+        "Italian": 2.3,
+        "Filipino": 1.7,
+        "Indian": 1.6,
+        "Others": 6.4
+      }
+    },
+    {
+      "id": "Netherlands",
+      "name": "Netherlands",
+      "genderRatio": {
+        "women": 50.5,
+        "men": 49.5
       },
-      {
-        "id": "Netherlands",
-        "name": "Netherlands",
-        "genderRatio": {
-          "women": 50.5,
-          "men": 49.5
+      "languages": [
+        {
+          "name": "Dutch",
+          "percentage": 96.0
         },
-        "languages": [
-          "Dutch",
-          "English",
-          "German"
-        ],
-        "foreignPopulation": {
-          "Turkish": 1.6,
-          "Moroccan": 1.4,
-          "German": 1.0,
-          "Polish": 0.9,
-          "Others": 5.2
+        {
+          "name": "English",
+          "percentage": 91.0
+        },
+        {
+          "name": "German",
+          "percentage": 71.0
         }
+      ],
+      "foreignPopulation": {
+        "Turkish": 1.6,
+        "Moroccan": 1.4,
+        "German": 1.0,
+        "Polish": 0.9,
+        "Others": 5.2
+      }
+    },
+    {
+      "id": "Poland",
+      "name": "Poland",
+      "genderRatio": {
+        "women": 51.5,
+        "men": 48.5
       },
-      {
-        "id": "Poland",
-        "name": "Poland",
-        "genderRatio": {
-          "women": 51.5,
-          "men": 48.5
+      "languages": [
+        {
+          "name": "Polish",
+          "percentage": 98.0
         },
-        "languages": [
-          "Polish",
-          "English",
-          "German"
-        ],
-        "foreignPopulation": {
-          "Ukrainian": 2.5,
-          "Belarusian": 0.4,
-          "German": 0.2,
-          "Russian": 0.2,
-          "Others": 0.6
+        {
+          "name": "English",
+          "percentage": 37.0
+        },
+        {
+          "name": "German",
+          "percentage": 19.0
         }
+      ],
+      "foreignPopulation": {
+        "Ukrainian": 2.5,
+        "Belarusian": 0.4,
+        "German": 0.2,
+        "Russian": 0.2,
+        "Others": 0.6
+      }
+    },
+    {
+      "id": "Portugal",
+      "name": "Portugal",
+      "genderRatio": {
+        "women": 51.4,
+        "men": 48.6
       },
-      {
-        "id": "Portugal",
-        "name": "Portugal",
-        "genderRatio": {
-          "women": 51.4,
-          "men": 48.6
+      "languages": [
+        {
+          "name": "Portuguese",
+          "percentage": 99.5
         },
-        "languages": [
-          "Portuguese",
-          "English",
-          "French"
-        ],
-        "foreignPopulation": {
-          "Brazilian": 3.5,
-          "Cape Verdean": 1.1,
-          "Angolan": 0.6,
-          "Guinean": 0.5,
-          "Others": 2.9
+        {
+          "name": "English",
+          "percentage": 32.0
+        },
+        {
+          "name": "French",
+          "percentage": 24.0
         }
+      ],
+      "foreignPopulation": {
+        "Brazilian": 3.5,
+        "Cape Verdean": 1.1,
+        "Angolan": 0.6,
+        "Guinean": 0.5,
+        "Others": 2.9
+      }
+    },
+    {
+      "id": "Romania",
+      "name": "Romania",
+      "genderRatio": {
+        "women": 51.3,
+        "men": 48.7
       },
-      {
-        "id": "Romania",
-        "name": "Romania",
-        "genderRatio": {
-          "women": 51.3,
-          "men": 48.7
+      "languages": [
+        {
+          "name": "Romanian",
+          "percentage": 98.5
         },
-        "languages": [
-          "Romanian",
-          "English",
-          "Hungarian"
-        ],
-        "foreignPopulation": {
-          "Moldovan": 0.3,
-          "Turkish": 0.2,
-          "Ukrainian": 0.2,
-          "Hungarian": 0.2,
-          "Others": 0.3
+        {
+          "name": "English",
+          "percentage": 31.0
+        },
+        {
+          "name": "Hungarian",
+          "percentage": 6.0
         }
+      ],
+      "foreignPopulation": {
+        "Moldovan": 0.3,
+        "Turkish": 0.2,
+        "Ukrainian": 0.2,
+        "Hungarian": 0.2,
+        "Others": 0.3
+      }
+    },
+    {
+      "id": "Slovakia",
+      "name": "Slovakia",
+      "genderRatio": {
+        "women": 51.1,
+        "men": 48.9
       },
-      {
-        "id": "Slovakia",
-        "name": "Slovakia",
-        "genderRatio": {
-          "women": 51.1,
-          "men": 48.9
+      "languages": [
+        {
+          "name": "Slovak",
+          "percentage": 98.8
         },
-        "languages": [
-          "Slovak",
-          "English",
-          "Czech"
-        ],
-        "foreignPopulation": {
-          "Ukrainian": 0.8,
-          "Czech": 0.3,
-          "Hungarian": 0.2,
-          "Serbian": 0.1,
-          "Others": 0.2
+        {
+          "name": "English",
+          "percentage": 28.0
+        },
+        {
+          "name": "Czech",
+          "percentage": 35.0
         }
+      ],
+      "foreignPopulation": {
+        "Ukrainian": 0.8,
+        "Czech": 0.3,
+        "Hungarian": 0.2,
+        "Serbian": 0.1,
+        "Others": 0.2
+      }
+    },
+    {
+      "id": "Slovenia",
+      "name": "Slovenia",
+      "genderRatio": {
+        "women": 50.8,
+        "men": 49.2
       },
-      {
-        "id": "Slovenia",
-        "name": "Slovenia",
-        "genderRatio": {
-          "women": 50.8,
-          "men": 49.2
+      "languages": [
+        {
+          "name": "Slovenian",
+          "percentage": 97.5
         },
-        "languages": [
-          "Slovenian",
-          "English",
-          "Croatian"
-        ],
-        "foreignPopulation": {
-          "Bosnian": 1.8,
-          "Serbian": 1.4,
-          "Croatian": 1.1,
-          "Macedonian": 0.3,
-          "Others": 1.0
+        {
+          "name": "English",
+          "percentage": 59.0
+        },
+        {
+          "name": "Croatian",
+          "percentage": 61.0
         }
+      ],
+      "foreignPopulation": {
+        "Bosnian": 1.8,
+        "Serbian": 1.4,
+        "Croatian": 1.1,
+        "Macedonian": 0.3,
+        "Others": 1.0
+      }
+    },
+    {
+      "id": "Spain",
+      "name": "Spain",
+      "genderRatio": {
+        "women": 51.2,
+        "men": 48.8
       },
-      {
-        "id": "Spain",
-        "name": "Spain",
-        "genderRatio": {
-          "women": 51.2,
-          "men": 48.8
+      "languages": [
+        {
+          "name": "Spanish",
+          "percentage": 99.0
         },
-        "languages": [
-          "Spanish",
-          "English",
-          "Catalan"
-        ],
-        "foreignPopulation": {
-          "Moroccan": 1.7,
-          "Romanian": 1.4,
-          "Colombian": 1.0,
-          "Italian": 0.8,
-          "Others": 6.4
+        {
+          "name": "English",
+          "percentage": 28.0
+        },
+        {
+          "name": "Catalan",
+          "percentage": 17.0
         }
+      ],
+      "foreignPopulation": {
+        "Moroccan": 1.7,
+        "Romanian": 1.4,
+        "Colombian": 1.0,
+        "Italian": 0.8,
+        "Others": 6.4
+      }
+    },
+    {
+      "id": "Sweden",
+      "name": "Sweden",
+      "genderRatio": {
+        "women": 50.2,
+        "men": 49.8
       },
-      {
-        "id": "Sweden",
-        "name": "Sweden",
-        "genderRatio": {
-          "women": 50.2,
-          "men": 49.8
+      "languages": [
+        {
+          "name": "Swedish",
+          "percentage": 95.0
         },
-        "languages": [
-          "Swedish",
-          "English",
-          "German"
-        ],
+        {
+          "name": "English",
+          "percentage": 89.0
+        },
+        {
+          "name": "German",
+          "percentage": 30.0
+        }
+      ],
         "foreignPopulation": {
           "Syrian": 1.8,
           "Iraqi": 1.4,

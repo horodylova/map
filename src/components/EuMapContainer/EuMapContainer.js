@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import GenderRatioChart from "@/components/GenderRatioChart/GenderRatioChart";
+import LanguagesChart from "@/components/LanguagesChart/LanguagesChart";
 import euData from "../../../data/euData.json";
 import styles from "./EuMapContainer.module.css";
 
@@ -10,6 +11,7 @@ import MultiSelectToggle from "@/components/MultiSelectToggle/MultiSelectToggle"
 import EuInteractiveMap from '@/components/Map/Map';
 import Modal from "../Modal/Modal";
 import { getSummedGenderRatio } from "@/utils/genderUtils";
+import { getUniqueLanguages } from "@/utils/languageUtils";
 
 export default function EuMapContainer() {
   const meta = euData.metadata;
@@ -19,6 +21,7 @@ export default function EuMapContainer() {
   const [selectedCountry, setSelectedCountry] = useState(null);
   const [selectedCountries, setSelectedCountries] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState(meta.categories[0]);
 
   const handleToggle = (e) => {
     e.stopPropagation();
@@ -75,13 +78,18 @@ export default function EuMapContainer() {
     return country ? country.genderRatio : null;
   };
 
+  const getCountryLanguages = (countryName) => {
+    const country = countriesData.find(c => c.name === countryName);
+    return country ? country.languages : [];
+  };
+
   return (
     <div className={styles.euMapContainer}>
       <h2 className={styles.euMapTitle}>{meta.description}</h2>
       <div className={styles.euMapUpdated}>
         Last updated: {meta.lastUpdated}
       </div>
-      <CategoryRadioGroup onChange={(category) => console.log(category)} />
+      <CategoryRadioGroup onChange={setSelectedCategory} />
       <MultiSelectToggle
         isMulti={isMulti}
         onToggle={handleToggle}
@@ -144,12 +152,20 @@ export default function EuMapContainer() {
                 <li className={styles.selectedCountryItem} key={country}>{country}</li>
               ))}
             </ul>
-            <GenderRatioChart genderRatio={getSummedGenderRatio(selectedCountries, getCountryGenderRatio)} />
+            {selectedCategory === "Gender Ratio" ? (
+              <GenderRatioChart genderRatio={getSummedGenderRatio(selectedCountries, getCountryGenderRatio)} />
+            ) : selectedCategory === "Languages" ? (
+              <LanguagesChart languages={getUniqueLanguages(selectedCountries, getCountryLanguages)} />
+            ) : null}
           </div>
         ) : (!isMulti && selectedCountry) ? (
           <div>
             <h2 className={styles.selectedCountryTitle}>{selectedCountry}</h2>
-            <GenderRatioChart genderRatio={getCountryGenderRatio(selectedCountry)} />
+            {selectedCategory === "Gender Ratio" ? (
+              <GenderRatioChart genderRatio={getCountryGenderRatio(selectedCountry)} />
+            ) : selectedCategory === "Languages" ? (
+              <LanguagesChart languages={getCountryLanguages(selectedCountry)} />
+            ) : null}
           </div>
         ) : null}
       </Modal>
