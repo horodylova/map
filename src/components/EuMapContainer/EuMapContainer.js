@@ -92,51 +92,50 @@ export default function EuMapContainer() {
 
   return (
     <div className={styles.euMapContainer}>
-      <h2 className={styles.euMapTitle}>{meta.description}</h2>
+      <div className={styles.headerRow}>
+        <img src="/logo.png" alt="Logo" className={styles.logo} />
+        <h2 className={styles.euMapTitle}>{meta.description}</h2>
+      </div>
       <div className={styles.euMapUpdated}>
         Last updated: {meta.lastUpdated}
       </div>
       <CategoryRadioGroup onChange={setSelectedCategory} />
-      <MultiSelectToggle
-        isMulti={isMulti}
-        onToggle={handleToggle}
-        onReset={handleReset}
-      />
-      {isMulti && !isModalOpen && (
-        <div className="modalWindow" style={{ margin: "1rem 0", textAlign: "center" }}>
-          <div>
-            {selectedCountries.length > 0 ? (
+      <div className={styles.multiSelectRow}>
+        <div className={styles.multiSelectToggleWrap}>
+          <MultiSelectToggle
+            isMulti={isMulti}
+            onToggle={handleToggle}
+            onReset={handleReset}
+          />
+        </div>
+        <div className={styles.multiSelectInfo}>
+          {isMulti ? (
+            selectedCountries.length > 0 ? (
               <span className={styles.selectedCountriesInfo}>
                 You have selected: {selectedCountries.join(", ")}
               </span>
             ) : (
-              <span className={styles.noCountriesInfo}>
+              <span className={styles.noCountriesInfo} style={{visibility: "visible"}}>
                 No countries selected
               </span>
-            )}
-          </div>
+            )
+          ) : (
+            <span className={styles.noCountriesInfo} style={{visibility: "hidden"}}>
+              No countries selected
+            </span>
+          )}
+        </div>
+        <div className={styles.multiSelectButtonWrap}>
           <button
-            style={{
-              marginTop: "0.7rem",
-              background: "var(--color-primary)",
-              color: "var(--color-bg)",
-              border: "none",
-              borderRadius: "6px",
-              padding: "0.6em 1.4em",
-              fontFamily: "var(--font-sans)",
-              fontSize: "1rem",
-              fontWeight: 500,
-              cursor: selectedCountries.length > 0 ? "pointer" : "not-allowed",
-              opacity: selectedCountries.length > 0 ? 1 : 0.5,
-              transition: "background 0.18s, color 0.18s"
-            }}
+            className={styles.showDataButton}
             onClick={handleShowData}
-            disabled={selectedCountries.length === 0}
+            disabled={!isMulti || selectedCountries.length === 0}
+            style={!isMulti ? {visibility: "hidden"} : {}}
           >
             Show Data
           </button>
         </div>
-      )}
+      </div>
       <div onClick={(e) => e.stopPropagation()}>
         <EuInteractiveMap
           isMulti={isMulti}

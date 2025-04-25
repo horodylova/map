@@ -24,7 +24,7 @@
 }
 
 .sourceLink {
-  color: var(--color-secondary);
+  color: var(--color-primary);
   text-decoration: underline;
   font-weight: 500;
   word-break: break-word;

@@ -18,6 +18,50 @@
   margin-bottom: 0.5rem;
 }
 
+.headerRow {
+  display: flex;
+  align-items: center; 
+  gap: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.logo {
+  height: 3.5rem; 
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.euMapTitle {
+  color: var(--color-primary);
+  font-size: 2rem;
+  font-family: var(--font-sans);
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  line-height: 1; 
+  display: flex;
+  align-items: center; 
+}
+
+@media (max-width: 640px) {
+  .headerRow {
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    margin-bottom: 0.25rem;
+  }
+  .logo {
+    height: 2.3rem;
+  }
+  .euMapTitle {
+    font-size: 1.2rem;
+    text-align: center;
+    word-break: break-word;
+  }
+}
+
 @media (max-width: 640px) {
   .euMapTitle {
     font-size: 1.2rem;
@@ -92,3 +136,91 @@
   text-align: center;
   word-break: break-word;
 }
+
+
+.multiSelectRow {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin: 1rem 0;
+  width: 100%;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.multiSelectInfo {
+  flex: 1 1 220px;
+  min-width: 180px;
+  max-width: 400px;
+  text-align: center;
+  font-size: 1rem;
+  color: var(--color-primary);
+  padding: 0 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.showDataButton {
+  margin-left: 1rem;
+  background: var(--color-primary);
+  color: var(--color-bg);
+  border: none;
+  border-radius: 6px;
+  padding: 0.6em 1.4em;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  opacity: 1;
+  transition: background 0.18s, color 0.18s;
+}
+.showDataButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+@media (max-width: 700px) {
+  .multiSelectRow {
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    width: 100%;
+    max-width: 100vw;
+    margin: 0.5rem 0 0.7rem 0;
+  }
+  .multiSelectToggleWrap {
+    flex: none;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .multiSelectInfo {
+    flex: none;
+    min-width: 0;
+    max-width: 100%;
+    width: 100%;
+    font-size: 0.98rem;
+    padding: 0.1rem 0 0.2rem 0;
+    margin: 0;
+    justify-content: center;   
+    min-height: unset;
+    text-align: center;        
+    display: flex;
+    align-items: center;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: unset;
+  }
+  .showDataButton {
+    margin-left: 0;
+    width: 100%;
+    min-width: 0;
+    padding: 0.7em 0;
+    font-size: 1rem;
+  }
+}
+  .showDataButton.hidden {
+    display: none;
+  }
