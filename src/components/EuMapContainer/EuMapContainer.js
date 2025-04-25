@@ -11,7 +11,9 @@ import MultiSelectToggle from "@/components/MultiSelectToggle/MultiSelectToggle"
 import EuInteractiveMap from '@/components/Map/Map';
 import Modal from "../Modal/Modal";
 import { getSummedGenderRatio } from "@/utils/genderUtils";
-import { getUniqueLanguages } from "@/utils/languageUtils";
+import { getAggregatedLanguages } from "@/utils/languageUtils";
+import { getAggregatedForeignPopulation } from "@/utils/foreignPopulationUtils"; 
+import ForeignPopulationChart from "@/components/ForeignPopulationChart/ForeignPopulationChart"; 
 
 export default function EuMapContainer() {
   const meta = euData.metadata;
@@ -81,6 +83,11 @@ export default function EuMapContainer() {
   const getCountryLanguages = (countryName) => {
     const country = countriesData.find(c => c.name === countryName);
     return country ? country.languages : [];
+  };
+
+  const getCountryForeignPopulation = (countryName) => {
+    const country = countriesData.find(c => c.name === countryName);
+    return country ? country.foreignPopulation : {};
   };
 
   return (
@@ -155,7 +162,13 @@ export default function EuMapContainer() {
             {selectedCategory === "Gender Ratio" ? (
               <GenderRatioChart genderRatio={getSummedGenderRatio(selectedCountries, getCountryGenderRatio)} />
             ) : selectedCategory === "Languages" ? (
-              <LanguagesChart languages={getUniqueLanguages(selectedCountries, getCountryLanguages)} />
+              <LanguagesChart
+                languages={getAggregatedLanguages(selectedCountries, getCountryLanguages)}
+              />
+            ) : selectedCategory === "Foreign Population" ? (
+              <ForeignPopulationChart
+                foreignPopulation={getAggregatedForeignPopulation(selectedCountries, getCountryForeignPopulation)}
+              />
             ) : null}
           </div>
         ) : (!isMulti && selectedCountry) ? (
@@ -165,6 +178,8 @@ export default function EuMapContainer() {
               <GenderRatioChart genderRatio={getCountryGenderRatio(selectedCountry)} />
             ) : selectedCategory === "Languages" ? (
               <LanguagesChart languages={getCountryLanguages(selectedCountry)} />
+            ) : selectedCategory === "Foreign Population" ? (
+              <ForeignPopulationChart foreignPopulation={getCountryForeignPopulation(selectedCountry)} />
             ) : null}
           </div>
         ) : null}
