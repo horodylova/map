@@ -91,105 +91,110 @@ export default function EuMapContainer() {
   };
 
   return (
-    <div className={styles.euMapContainer}>
-      <div className={styles.headerRow}>
-        <img src="/logo.png" alt="Logo" className={styles.logo} />
-        <h2 className={styles.euMapTitle}>{meta.description}</h2>
-      </div>
-      <div className={styles.euMapUpdated}>
-        Last updated: {meta.lastUpdated}
-      </div>
-      <CategoryRadioGroup onChange={setSelectedCategory} />
-      <div className={styles.multiSelectRow}>
-        <div className={styles.multiSelectToggleWrap}>
-          <MultiSelectToggle
-            isMulti={isMulti}
-            onToggle={handleToggle}
-            onReset={handleReset}
-          />
-        </div>
-        <div className={styles.multiSelectInfo}>
-          {isMulti ? (
-            selectedCountries.length > 0 ? (
-              <span className={styles.selectedCountriesInfo}>
-                You have selected: {selectedCountries.join(", ")}
-              </span>
-            ) : (
-              <span className={styles.noCountriesInfo} style={{visibility: "visible"}}>
-                No countries selected
-              </span>
-            )
-          ) : (
-            <span className={styles.noCountriesInfo} style={{visibility: "hidden"}}>
-              No countries selected
-            </span>
-          )}
-        </div>
-        <div className={styles.multiSelectButtonWrap}>
-          <button
-            className={styles.showDataButton}
-            onClick={handleShowData}
-            disabled={!isMulti || selectedCountries.length === 0}
-            style={!isMulti ? {visibility: "hidden"} : {}}
-          >
-            Show Data
-          </button>
-        </div>
-      </div>
-      <div onClick={(e) => e.stopPropagation()}>
-        <EuInteractiveMap
-          isMulti={isMulti}
-          selectedCountry={selectedCountry}
-          selectedCountries={selectedCountries}
-          onCountryClick={handleCountryClick}
-        />
-      </div>
-      <Modal
-        isOpen={isModalOpen}
-        onClose={handleCloseModal}
-      >
-        {isMulti && selectedCountries.length > 0 ? (
-          <div className={styles.modalSummaryBlock}>
-            <h2 className={styles.selectedCountriesTitle}>
-              Selected countries: {selectedCountries.length}
-            </h2>
-            <ul className={styles.selectedCountriesList}>
-              {selectedCountries.map((country) => (
-                <li className={styles.selectedCountryItem} key={country}>{country}</li>
-              ))}
-            </ul>
-            {selectedCategory === "Gender Ratio" ? (
-              <GenderRatioChart genderRatio={getSummedGenderRatio(selectedCountries, getCountryGenderRatio)} />
-            ) : selectedCategory === "Languages" ? (
-              <LanguagesChart
-                languages={getAggregatedLanguages(selectedCountries, getCountryLanguages)}
-              />
-            ) : selectedCategory === "Foreign Population" ? (
-              <ForeignPopulationChart
-                foreignPopulation={getAggregatedForeignPopulation(selectedCountries, getCountryForeignPopulation)}
-              />
-            ) : null}
+    <div className="container">
+      <div className={styles.euMapContainer}>
+        <h2 className={styles.euMapTitle}>
+          Example Map 1 – EU population diversity by citizenship and language
+        </h2>
+        <div className={styles.mapLayoutRow}>
+          <div className={styles.mapOptionsSidebar}>
+            <CategoryRadioGroup onChange={setSelectedCategory} />
           </div>
-        ) : (!isMulti && selectedCountry) ? (
-          <div>
-            <h2 className={styles.selectedCountryTitle}>{selectedCountry}</h2>
-            {selectedCategory === "Gender Ratio" ? (
-              <GenderRatioChart genderRatio={getCountryGenderRatio(selectedCountry)} />
-            ) : selectedCategory === "Languages" ? (
-              <LanguagesChart languages={getCountryLanguages(selectedCountry)} />
-            ) : selectedCategory === "Foreign Population" ? (
-              <ForeignPopulationChart
-                foreignPopulation={
-                  Object.entries(getCountryForeignPopulation(selectedCountry)).map(([name, percentage]) => ({
-                    name,
-                    percentage
-                  }))
-                }
-              />
-            ) : null}
+          <div className={styles.mapMainBlock}>
+            <EuInteractiveMap
+              isMulti={isMulti}
+              selectedCountry={selectedCountry}
+              selectedCountries={selectedCountries}
+              onCountryClick={handleCountryClick}
+            />
           </div>
-        ) : null}
-      </Modal>
+          <div className={styles.mapControlsSidebar}>
+            <div className={styles.multiSelectRow}>
+              <div className={styles.multiSelectToggleWrap}>
+                <MultiSelectToggle
+                  isMulti={isMulti}
+                  onToggle={handleToggle}
+                  onReset={handleReset}
+                  label="Select multiple countries"
+                />
+              </div>
+              <div className={styles.multiSelectInfo}>
+                {isMulti ? (
+                  selectedCountries.length > 0 ? (
+                    <span className={styles.selectedCountriesInfo}>
+                      You have selected: {selectedCountries.join(", ")}
+                    </span>
+                  ) : (
+                    <span className={styles.noCountriesInfo} style={{visibility: "visible"}}>
+                      No countries selected
+                    </span>
+                  )
+                ) : (
+                  <span className={styles.noCountriesInfo} style={{visibility: "hidden"}}>
+                    No countries selected
+                  </span>
+                )}
+              </div>
+              <div className={styles.multiSelectButtonWrap}>
+                <button
+                  className={styles.showDataButton}
+                  onClick={handleShowData}
+                  disabled={!isMulti || selectedCountries.length === 0}
+                  style={!isMulti ? {visibility: "hidden"} : {}}
+                >
+                  Show Data
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <Modal
+          isOpen={isModalOpen}
+          onClose={handleCloseModal}
+        >
+          {isMulti && selectedCountries.length > 0 ? (
+            <div className={styles.modalSummaryBlock}>
+              <h2 className={styles.selectedCountryTitle}>
+                Selected countries: {selectedCountries.length}
+              </h2>
+              <ul className={styles.selectedCountriesList}>
+                {selectedCountries.map((country) => (
+                  <li className={styles.selectedCountryItem} key={country}>{country}</li>
+                ))}
+              </ul>
+              {selectedCategory === "Gender Ratio" ? (
+                <GenderRatioChart genderRatio={getSummedGenderRatio(selectedCountries, getCountryGenderRatio)} />
+              ) : selectedCategory === "Languages" ? (
+                <LanguagesChart
+                  languages={getAggregatedLanguages(selectedCountries, getCountryLanguages)}
+                />
+              ) : selectedCategory === "Foreign Population" ? (
+                <ForeignPopulationChart
+                  foreignPopulation={getAggregatedForeignPopulation(selectedCountries, getCountryForeignPopulation)}
+                />
+              ) : null}
+            </div>
+          ) : (!isMulti && selectedCountry) ? (
+            <div>
+              <h2 className={styles.selectedCountryTitle}>{selectedCountry}</h2>
+              {selectedCategory === "Gender Ratio" ? (
+                <GenderRatioChart genderRatio={getCountryGenderRatio(selectedCountry)} />
+              ) : selectedCategory === "Languages" ? (
+                <LanguagesChart languages={getCountryLanguages(selectedCountry)} />
+              ) : selectedCategory === "Foreign Population" ? (
+                <ForeignPopulationChart
+                  foreignPopulation={
+                    Object.entries(getCountryForeignPopulation(selectedCountry)).map(([name, percentage]) => ({
+                      name,
+                      percentage
+                    }))
+                  }
+                />
+              ) : null}
+            </div>
+          ) : null}
+        </Modal>
+      </div>
     </div>
   );
 }

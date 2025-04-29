@@ -21,27 +21,13 @@ export default function ForeignPopulationChart({ foreignPopulation }) {
     <div className={styles.foreignPopulationChartContainer}>
       <h3 className={styles.foreignPopulationChartTitle}>Foreign Population</h3>
       <ResponsiveContainer key={data.map(d => d.nationality).join('-')} width="100%" height={320}>
-        <RadarChart 
-          cx="50%" 
-          cy="50%" 
-          outerRadius={window.innerWidth <= 700 ? 80 : 110} 
-          data={data}
-        >
+        <RadarChart cx="50%" cy="50%" outerRadius={110} data={data}>
           <PolarGrid />
           <PolarAngleAxis
             dataKey="nationality"
-            tick={{ 
-              fontSize: window.innerWidth <= 700 ? 12 : 15, 
-              fill: "var(--color-text)", 
-              dx: window.innerWidth <= 700 ? 8 : 12 
-            }}
+            tick={{ fontSize: 15, fill: "var(--color-text)", dx: 12 }}
           />
-          <PolarRadiusAxis 
-            angle={30} 
-            domain={[0, Math.max(...data.map(d => d.value)) || 1]} 
-            tickFormatter={v => `${v}%`}
-            tick={{ fontSize: window.innerWidth <= 700 ? 12 : 14 }}
-          />
+          <PolarRadiusAxis angle={30} domain={[0, Math.max(...data.map(d => d.value)) || 1]} tickFormatter={v => `${v}%`} />
           <Tooltip formatter={(value) => `${value}%`} />
           <Radar
             name="Foreign Population"

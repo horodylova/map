@@ -4,7 +4,7 @@ import React from "react";
 
 import styles from "./MultiSelectToggle.module.css";
 
-export default function MultiSelectToggle({ isMulti, onToggle, onReset }) {
+export default function MultiSelectToggle({ isMulti, onToggle, onReset, label }) {
   return (
     <div className={styles.toggleContainer}>
       <button
@@ -12,7 +12,7 @@ export default function MultiSelectToggle({ isMulti, onToggle, onReset }) {
         onClick={onToggle}
         type="button"
       >
-        {isMulti ? "Single select" : "Multi-select"}
+        {label}
       </button>
       <button
         className={styles.resetButton}
