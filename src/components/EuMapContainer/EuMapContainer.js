@@ -177,6 +177,13 @@ export default function EuMapContainer() {
           ) : (!isMulti && selectedCountry) ? (
             <div>
               <h2 className={styles.selectedCountryTitle}>{selectedCountry}</h2>
+              {
+                countriesData.find(c => c.name === selectedCountry)?.note && (
+                  <div style={{fontSize: "0.95rem", color: "var(--color-text-light)", marginBottom: "0.7em"}}>
+                    {countriesData.find(c => c.name === selectedCountry).note}
+                  </div>
+                )
+              }
               {selectedCategory === "Gender Ratio" ? (
                 <GenderRatioChart genderRatio={getCountryGenderRatio(selectedCountry)} />
               ) : selectedCategory === "Languages" ? (
