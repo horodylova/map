@@ -15,6 +15,8 @@ import { getAggregatedLanguages } from "@/utils/languageUtils";
 import { getAggregatedForeignPopulation } from "@/utils/foreignPopulationUtils"; 
 import ForeignPopulationChart from "@/components/ForeignPopulationChart/ForeignPopulationChart"; 
 
+const categories = euData.metadata.categories;
+
 export default function EuMapContainer() {
   const meta = euData.metadata;
   const countriesData = euData.countries;
@@ -23,7 +25,19 @@ export default function EuMapContainer() {
   const [selectedCountry, setSelectedCountry] = useState(null);
   const [selectedCountries, setSelectedCountries] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedCategory, setSelectedCategory] = useState(meta.categories[0]);
+  const [selectedCategory, setSelectedCategory] = useState(categories[0]);
+
+  const [mapPosition, setMapPosition] = useState({
+    coordinates: [0, 0], 
+    zoom: 1
+  });
+
+  const handleCategoryChange = (category) => {
+    setSelectedCategory(category);
+    setSelectedCountry(null);
+    setSelectedCountries([]);
+    setIsModalOpen(false);
+  };
 
   const handleToggle = (e) => {
     e.stopPropagation();
@@ -90,6 +104,24 @@ export default function EuMapContainer() {
     return country ? country.foreignPopulation : {};
   };
 
+  const handleZoomIn = () => {
+    setMapPosition(prev => ({
+      ...prev,
+      zoom: Math.min(prev.zoom + 0.5, 8) 
+    }));
+  };
+  
+  const handleZoomOut = () => {
+    setMapPosition(prev => ({
+      ...prev,
+      zoom: Math.max(prev.zoom - 0.5, 1) 
+    }));
+  };
+  
+  const handleMoveEnd = (position) => {
+    setMapPosition(position);
+  };
+
   return (
     <div className="container">
       <div className={styles.euMapContainer}>
@@ -98,14 +130,21 @@ export default function EuMapContainer() {
         </h2>
         <div className={styles.mapLayoutRow}>
           <div className={styles.mapOptionsSidebar}>
-            <CategoryRadioGroup onChange={setSelectedCategory} />
+            <CategoryRadioGroup onChange={handleCategoryChange} />
           </div>
           <div className={styles.mapMainBlock}>
+            <div className={styles.zoomControls}>
+              <button className={styles.zoomButton} onClick={handleZoomIn} aria-label="Zoom in">+</button>
+              <button className={styles.zoomButton} onClick={handleZoomOut} aria-label="Zoom out">–</button>
+            </div>
             <EuInteractiveMap
               isMulti={isMulti}
               selectedCountry={selectedCountry}
               selectedCountries={selectedCountries}
               onCountryClick={handleCountryClick}
+              zoom={mapPosition.zoom}
+              center={mapPosition.coordinates}
+              onMoveEnd={handleMoveEnd}
             />
           </div>
           <div className={styles.mapControlsSidebar}>

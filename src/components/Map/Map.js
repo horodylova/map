@@ -1,6 +1,6 @@
 "use client"
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { ComposableMap, Geographies, Geography, ZoomableGroup } from "react-simple-maps";
 import geoData from "../../../data/world-110m.json";
 import euData from "../../../data/euData.json";
@@ -14,24 +14,61 @@ export default function EuInteractiveMap({
   selectedCountry,
   selectedCountries,
   onCountryClick,
+  zoom = 1,
+  center = [0, 0],
+  onMoveEnd,
 }) {
+  const [hasInteracted, setHasInteracted] = useState(false);
+  
+  const initialPosition = {
+    coordinates: [0, 0],
+    zoom: 1
+  };
+  
+  const position = hasInteracted 
+    ? { coordinates: center, zoom: zoom } 
+    : initialPosition;
+
+  const handleMoveEnd = (pos) => {
+    setHasInteracted(true);
+    if (onMoveEnd) {
+      onMoveEnd(pos);
+    }
+  };
+
+  useEffect(() => {
+    if ((zoom !== initialPosition.zoom || 
+        center[0] !== initialPosition.coordinates[0] || 
+        center[1] !== initialPosition.coordinates[1]) && 
+        !hasInteracted) {
+      setHasInteracted(true);
+    }
+  }, [zoom, center, hasInteracted]);
+
   return (
     <div className={styles.mapWrapper}>
       <ComposableMap
         width={800}
         style={{ width: "100%", maxWidth: "100%", height: "auto" }}
       >
-        <ZoomableGroup minZoom={1} maxZoom={8}>
+        <ZoomableGroup
+          center={position.coordinates}
+          zoom={position.zoom}
+          minZoom={1}
+          maxZoom={8}
+          onMoveEnd={handleMoveEnd}
+          onMoveStart={() => setHasInteracted(true)}
+        >
           <Geographies geography={geoData}>
             {({ geographies }) =>
               geographies.map((geo) => {
                 const countryName = geo.properties.NAME || geo.properties.name;
                 const isEU = euCountryNames.includes(countryName);
-
+                
                 const isSelected = isMulti
                   ? selectedCountries.includes(countryName)
                   : selectedCountry === countryName;
-
+                
                 return (
                   <Geography
                     key={geo.rsmKey}
@@ -40,7 +77,10 @@ export default function EuInteractiveMap({
                     data-tooltip-content={isEU ? countryName : undefined}
                     onClick={
                       isEU
-                        ? (event) => onCountryClick(countryName, event)
+                        ? (event) => {
+                            setHasInteracted(true);
+                            onCountryClick(countryName, event);
+                          }
                         : undefined
                     }
                     style={{

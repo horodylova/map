@@ -2,17 +2,17 @@
     "sources": [
       {
         "title": "Eurostat – EU Population Diversity by Citizenship and Country of Birth",
-        "url": "https://ec.europa.eu/eurostat/statistics-explained",
+        "url": "https://ec.europa.eu/eurostat/statistics-explained/index.php?oldid=665533",
         "description": "Data extracted in February 2025, covering migration, foreign-born population, and citizenship."
       },
       {
         "title": "Eurostat – Demography of Europe: 2024 Edition",
-        "url": "https://ec.europa.eu/eurostat",
+        "url": "https://ec.europa.eu/eurostat/web/interactive-publications/demography-2024",
         "description": "Official demographic data for all EU member states, including population structure and diversity."
       },
       {
-        "title": "Statista – Share of Foreign Nationals in EU Member States (2022–2024)",
-        "url": "https://statista.com",
+        "title": "Statista – Share of Foreign Nationals in EU Member States (2022)",
+        "url": "https://www.statista.com/statistics/266170/share-of-foreign-nationals-in-eu-member-states/",
         "description": "Comparative statistics and visuals showing the proportion of foreign nationals in EU countries."
       }
     ]
