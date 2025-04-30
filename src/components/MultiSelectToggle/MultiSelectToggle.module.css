@@ -34,7 +34,7 @@
 }
 
 .toggleButton.active:hover {
-  background: var(--color-tertiary, #f7b32b);
+  background: var(--color-secondary, #f7b32b);
   color: var(--color-bg);
 }
 

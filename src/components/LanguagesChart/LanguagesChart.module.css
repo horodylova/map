@@ -1,7 +1,7 @@
 .languagesChartContainer {
     background: var(--color-bg);
     border-radius: 12px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    /* box-shadow: 0 2px 12px rgba(0,0,0,0.07); */
     padding: 1.2rem 1rem 1rem 1rem;
     margin: 0.5rem 0;
     min-width: 240px;
@@ -13,7 +13,7 @@
   }
   
   .languagesChartTitle {
-    color: var(--color-primary);
+    color: #333;
     font-size: 1.1rem;
     font-weight: 600;
     margin-bottom: 0.7rem;

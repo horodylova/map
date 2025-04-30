@@ -5,17 +5,17 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    /* align-items: flex-start; */
     min-width: 500px;
 }
 
 .foreignPopulationChartTitle {
-    color: var(--color-primary);
+    color: #333;
     font-size: 1.1rem;
     font-weight: 600;
     margin-bottom: 0.7rem;
     letter-spacing: 0.01em;
-    text-align: start;
+    text-align: center;
 }
 
 .nationalityList {
