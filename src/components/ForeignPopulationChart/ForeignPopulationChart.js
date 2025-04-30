@@ -21,7 +21,7 @@ export default function ForeignPopulationChart({ foreignPopulation }) {
     <div className={styles.foreignPopulationChartContainer}>
       <h3 className={styles.foreignPopulationChartTitle}>Foreign Population</h3>
       <div style={{fontSize: "0.95rem", color: "var(--color-text-light)", marginBottom: "0.7em"}}>
-        ‘Foreign’ is defined differently in each country, generally referring to residents without citizenship or a local passport.
+        <sup>*</sup>‘Foreign’ is defined differently in each country, generally referring to residents without citizenship or a local passport.
       </div>
       <ResponsiveContainer key={data.map(d => d.nationality).join('-')} width="100%" height={320}>
         <RadarChart cx="50%" cy="50%" outerRadius={110} data={data}>

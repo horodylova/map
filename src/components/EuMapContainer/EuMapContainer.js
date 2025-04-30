@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useState } from "react";
-import GenderRatioChart from "@/components/GenderRatioChart/GenderRatioChart";
+import AsylumSeekersChart from "@/components/AsylumSeekersChart/AsylumSeekersChart";
 import LanguagesChart from "@/components/LanguagesChart/LanguagesChart";
 import euData from "../../../data/euData.json";
 import styles from "./EuMapContainer.module.css";
@@ -10,7 +10,7 @@ import CategoryRadioGroup from "@/components/CategoryRadioGroup/CategoryRadioGro
 import MultiSelectToggle from "@/components/MultiSelectToggle/MultiSelectToggle";
 import EuInteractiveMap from '@/components/Map/Map';
 import Modal from "../Modal/Modal";
-import { getSummedGenderRatio } from "@/utils/genderUtils";
+import { getSummedAsylumSeekers } from "@/utils/asylumUtils";
 import { getAggregatedLanguages } from "@/utils/languageUtils";
 import { getAggregatedForeignPopulation } from "@/utils/foreignPopulationUtils"; 
 import ForeignPopulationChart from "@/components/ForeignPopulationChart/ForeignPopulationChart"; 
@@ -18,7 +18,6 @@ import ForeignPopulationChart from "@/components/ForeignPopulationChart/ForeignP
 const categories = euData.metadata.categories;
 
 export default function EuMapContainer() {
-  const meta = euData.metadata;
   const countriesData = euData.countries;
 
   const [isMulti, setIsMulti] = useState(false);
@@ -89,9 +88,9 @@ export default function EuMapContainer() {
     setIsMulti(false); 
   };
 
-  const getCountryGenderRatio = (countryName) => {
+  const getCountryAsylumSeekers = (countryName) => {
     const country = countriesData.find(c => c.name === countryName);
-    return country ? country.genderRatio : null;
+    return country && country.asylumSeekers ? country.asylumSeekers : {};
   };
 
   const getCountryLanguages = (countryName) => {
@@ -201,8 +200,10 @@ export default function EuMapContainer() {
                   <li className={styles.selectedCountryItem} key={country}>{country}</li>
                 ))}
               </ul>
-              {selectedCategory === "Gender Ratio" ? (
-                <GenderRatioChart genderRatio={getSummedGenderRatio(selectedCountries, getCountryGenderRatio)} />
+              {selectedCategory === "Asylum Seekers" ? (
+                <AsylumSeekersChart
+                  dataByYear={getSummedAsylumSeekers(selectedCountries, getCountryAsylumSeekers)}
+                />
               ) : selectedCategory === "Languages" ? (
                 <LanguagesChart
                   languages={getAggregatedLanguages(selectedCountries, getCountryLanguages)}
@@ -223,8 +224,10 @@ export default function EuMapContainer() {
                   </div>
                 )
               }
-              {selectedCategory === "Gender Ratio" ? (
-                <GenderRatioChart genderRatio={getCountryGenderRatio(selectedCountry)} />
+              {selectedCategory === "Asylum Seekers" ? (
+                <AsylumSeekersChart
+                  dataByYear={getCountryAsylumSeekers(selectedCountry)}
+                />
               ) : selectedCategory === "Languages" ? (
                 <LanguagesChart languages={getCountryLanguages(selectedCountry)} />
               ) : selectedCategory === "Foreign Population" ? (

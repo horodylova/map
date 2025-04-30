@@ -1,0 +1,53 @@
+.chartBlock {
+  width: 100%;
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 20px;
+}
+
+.chartTitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.chartContainer {
+  min-height: 260px;
+  width: 100% !important;
+  margin: 0 auto;
+}
+
+.noDataMessage {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  font-size: 16px;
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .chartBlock {
+    padding: 12px;
+    overflow-x: hidden;
+  }
+  
+  .chartContainer {
+    min-height: 220px;
+    margin-left: -10px;  
+  }
+  
+  .chartTitle {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .chartContainer {
+    min-height: 180px;
+  }
+}

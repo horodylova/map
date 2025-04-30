@@ -1,11 +1,4 @@
 
-/**
- * Aggregates foreign population data for multiple countries.
- * Returns array of { name, percentage }.
- * @param {string[]} countryNames
- * @param {function} getCountryForeignPopulation
- * @returns {Array<{ name: string, percentage: number }>}
- */
 export function getAggregatedForeignPopulation(countryNames, getCountryForeignPopulation) {
   const nationalityTotals = {};
   const nationalityCounts = {};
@@ -24,7 +17,6 @@ export function getAggregatedForeignPopulation(countryNames, getCountryForeignPo
     }
   });
 
-  // Average percentage for each nationality (by number of countries where it appears)
   return Object.keys(nationalityTotals).map(nationality => ({
     name: nationality,
     percentage: nationalityCounts[nationality]

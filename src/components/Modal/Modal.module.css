@@ -53,8 +53,6 @@
     overflow-y: auto;
     font-family: var(--font-sans);
     color: var(--color-text);
-    display: flex;
-    justify-content: center;  
     align-items: center;    
   }
   
