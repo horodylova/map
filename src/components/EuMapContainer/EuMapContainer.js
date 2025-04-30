@@ -215,7 +215,7 @@ export default function EuMapContainer() {
               ) : null}
             </div>
           ) : (!isMulti && selectedCountry) ? (
-            <div>
+            <div className={styles.modalSummaryBlock}>
               <h2 className={styles.selectedCountryTitle}>{selectedCountry}</h2>
               {
                 countriesData.find(c => c.name === selectedCountry)?.note && (
